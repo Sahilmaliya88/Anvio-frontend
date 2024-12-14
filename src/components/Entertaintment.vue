@@ -22,11 +22,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { shallowRef } from 'vue'
 import ComponetBtn from './ComponetBtn.vue'
 import Arena from './Arena.vue'
 import UnderConstruction from './UnderConstruction.vue'
-const component = ref(Arena)
+const component = shallowRef(Arena)
 </script>
 
 <style scoped>

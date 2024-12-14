@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div id="mainSlider">
+  <div class="mainSlider">
     <slot></slot>
     <button id="leftbtn" @click="Scroll(-800)" class="btn">
       <svg
@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch, type ComputedRef } from 'vue'
+import { onMounted } from 'vue'
 
 let SliderDiv: Element | undefined
 function Scroll(len: number) {
@@ -36,12 +36,13 @@ function Scroll(len: number) {
     SliderDiv.scrollLeft += len
   }
 }
+const props = defineProps<{ index?: number }>()
 onMounted(() => {
-  SliderDiv = document.getElementById('mainSlider')?.children[0]
+  SliderDiv = document.querySelectorAll('.mainSlider')[props.index || 0].children[0]
 })
 </script>
 <style scoped>
-#mainSlider {
+.mainSlider {
   display: flex;
   position: relative;
 }

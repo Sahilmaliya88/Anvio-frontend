@@ -7,8 +7,7 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
-const props = defineProps(['img', 'description'])
-console.log(props)
+defineProps(['img', 'description'])
 </script>
 
 <style scoped>

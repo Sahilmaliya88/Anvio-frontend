@@ -246,6 +246,17 @@
           <ReviewContainer></ReviewContainer>
         </Slider>
       </div>
+      <div id="offers">
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <h1>Offers</h1>
+          <button style="padding: 10px 40px; border: 2px solid #ce2127; border-radius: 50px">
+            All Offers
+          </button>
+        </div>
+        <Slider :index="1">
+          <OfferContainer></OfferContainer>
+        </Slider>
+      </div>
     </div>
   </div>
 </template>
@@ -261,6 +272,10 @@ import { defineAsyncComponent } from 'vue'
 import ComponentLoader from '@/components/Component.Loader.vue'
 const ReviewContainer = defineAsyncComponent({
   loader: () => import('@/components/Review.Container.vue'),
+  loadingComponent: ComponentLoader,
+})
+const OfferContainer = defineAsyncComponent({
+  loader: () => import('@/components/Offer.Container.vue'),
   loadingComponent: ComponentLoader,
 })
 const imgset1 = [
